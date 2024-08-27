@@ -25,7 +25,7 @@
 						"referenceName": "AzureSqlTable1",
 						"type": "DatasetReference"
 					},
-					"name": "sink1"
+					"name": "sinkResult"
 				}
 			],
 			"transformations": [
@@ -33,7 +33,10 @@
 					"name": "joiningTables"
 				},
 				{
-					"name": "select1"
+					"name": "select"
+				},
+				{
+					"name": "sort"
 				}
 			],
 			"scriptLines": [
@@ -71,7 +74,7 @@
 				"     matchType:'exact',",
 				"     ignoreSpaces: false,",
 				"     broadcast: 'auto')~> joiningTables",
-				"joiningTables select(mapColumn(",
+				"sort select(mapColumn(",
 				"          CustomerID = Customer@CustomerID,",
 				"          FirstName,",
 				"          LastName,",
@@ -83,7 +86,7 @@
 				"          ZipCode,",
 				"          Country,",
 				"          OrderID,",
-				"          ProductID,",
+				"          ProductID = aggregate1@ProductID,",
 				"          ProductName,",
 				"          Quantity,",
 				"          OrderTimestamp,",
@@ -91,8 +94,9 @@
 				"          CustomerID = Order@CustomerID",
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> select1",
-				"select1 sink(allowSchemaDrift: true,",
+				"     skipDuplicateMapOutputs: true) ~> select",
+				"joiningTables sort(asc(OrderID, true)) ~> sort",
+				"select sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     deletable:false,",
 				"     insertable:true,",
@@ -101,7 +105,7 @@
 				"     format: 'table',",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
-				"     errorHandlingOption: 'stopOnFirstError') ~> sink1"
+				"     errorHandlingOption: 'stopOnFirstError') ~> sinkResult"
 			]
 		}
 	}
