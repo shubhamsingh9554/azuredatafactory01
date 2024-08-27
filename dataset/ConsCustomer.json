@@ -1,0 +1,24 @@
+{
+	"name": "ConsCustomer",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_AST_BlobToBlobCustomer",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "consCustomer.csv",
+				"folderPath": "Customer",
+				"container": "consolidatedoutput"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
