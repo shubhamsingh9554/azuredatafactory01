@@ -1,0 +1,24 @@
+{
+	"name": "ConsOrder",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_AST_Blob_to_BlobOrder",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "ConsOrder.csv",
+				"folderPath": "Order",
+				"container": "consolidatedoutput"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}

@@ -1,0 +1,20 @@
+{
+	"name": "Order",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_AST_Blob_to_BlobOrder",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Excel",
+		"typeProperties": {
+			"sheetName": "Sheet1",
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "input"
+			},
+			"firstRowAsHeader": true
+		},
+		"schema": []
+	}
+}
