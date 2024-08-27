@@ -1,0 +1,16 @@
+{
+	"name": "BlobToSql_ConsOrderData",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_AST_Blob_to_Blob_Order",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "raw",
+			"table": "Order"
+		}
+	}
+}

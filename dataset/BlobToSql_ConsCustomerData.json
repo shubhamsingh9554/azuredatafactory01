@@ -1,0 +1,16 @@
+{
+	"name": "BlobToSql_ConsCustomerData",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_AST_Blob_To_SQl_Customer",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "raw",
+			"table": "Customer"
+		}
+	}
+}
