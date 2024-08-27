@@ -31,6 +31,9 @@
 			"transformations": [
 				{
 					"name": "joiningTables"
+				},
+				{
+					"name": "select1"
 				}
 			],
 			"scriptLines": [
@@ -68,7 +71,28 @@
 				"     matchType:'exact',",
 				"     ignoreSpaces: false,",
 				"     broadcast: 'auto')~> joiningTables",
-				"joiningTables sink(allowSchemaDrift: true,",
+				"joiningTables select(mapColumn(",
+				"          CustomerID = Customer@CustomerID,",
+				"          FirstName,",
+				"          LastName,",
+				"          Email,",
+				"          PhoneNumber,",
+				"          Address,",
+				"          City,",
+				"          State,",
+				"          ZipCode,",
+				"          Country,",
+				"          OrderID,",
+				"          ProductID,",
+				"          ProductName,",
+				"          Quantity,",
+				"          OrderTimestamp,",
+				"          Price,",
+				"          CustomerID = Order@CustomerID",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> select1",
+				"select1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     deletable:false,",
 				"     insertable:true,",
