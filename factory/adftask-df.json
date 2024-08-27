@@ -1,0 +1,9 @@
+{
+	"name": "adftask-df",
+	"location": "southindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "80db52b5-02f7-4ee8-91e9-f1c72cf5da84",
+		"tenantId": "2800c0a0-70e9-49be-8733-faeaa6aced99"
+	}
+}

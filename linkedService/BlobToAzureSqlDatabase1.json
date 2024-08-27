@@ -1,0 +1,17 @@
+{
+	"name": "BlobToAzureSqlDatabase1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"server": "adftasksvr01.database.windows.net",
+			"database": "adftask_db",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "Adftaskadmin1",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDk2NUE4ODM2LTU2MjAtNDVCQi1CNjlCLUYyQkIxNjVERkNCRl84ZTEwMGM4NC0yMWMzLTQ3NzEtOTI2Mi02YmJjYjQ3ODBlYmEiDQp9"
+		}
+	}
+}
