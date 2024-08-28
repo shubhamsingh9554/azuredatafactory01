@@ -1,0 +1,23 @@
+{
+	"name": "MP1_TD1_01",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_MP1_TD1_01",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Users.csv",
+				"container": "inputmaintask1"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}

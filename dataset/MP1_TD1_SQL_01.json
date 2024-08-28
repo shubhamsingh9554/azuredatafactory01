@@ -1,0 +1,16 @@
+{
+	"name": "MP1_TD1_SQL_01",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_MP1_TD1_BlobtoSql01",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "raw",
+			"table": "mp_users"
+		}
+	}
+}
