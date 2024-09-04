@@ -33,6 +33,12 @@
 				},
 				{
 					"name": "select3"
+				},
+				{
+					"name": "filter1"
+				},
+				{
+					"name": "filter2"
 				}
 			],
 			"scriptLines": [
@@ -125,11 +131,13 @@
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> select3",
-				"select2 sink(allowSchemaDrift: true,",
+				"select2 filter(!isNull({Order ID})) ~> filter1",
+				"select3 filter(!isNull({Order ID})) ~> filter2",
+				"filter1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> sink1",
-				"select3 sink(allowSchemaDrift: true,",
+				"filter2 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> sink2"
